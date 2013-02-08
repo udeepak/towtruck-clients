@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Static copies of the TowTruck client</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        $.ajax({
+          url: "./published.json",
+          dataType: "json"
+        }).then(function (data) {
+          var $l = $("#list");
+          data.forEach(function (item) {
+            var $li = $("<li>");
+            $li.append($("<a>").attr("href", data.dir).text(data.dir + "/"))
+              .append($("<span> published at: </span>"))
+              .append($("<span>").text(data.date))
+              .append($("<span> commit: </span>"))
+              .append($("<a>").attr("href", data.commitUrl).text(data.revision));
+            $l.append($li);
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>TowTruck client(s)</h1>
+
+    <p>Several versions
+    of <a href="https://github.com/mozilla/towtruck">TowTruck</a> are
+    hosted here, as an easy place to host a snapshot to share or later
+    reference.</p>
+
+    <p>The list:</p>
+
+    <ul id="list">
+    </ul>
+
+  </body>
+</html>
