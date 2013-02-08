@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "baseUrl": "http://mozilla.github.com/towtruck-clients/test1", 
+    "commitUrl": "https://github.com/mozilla/towtruck/commit/f872e12", 
+    "email": "ianb@colorstudy.com", 
+    "dir": "test1", 
+    "revision": "f872e12"
+  }
+]

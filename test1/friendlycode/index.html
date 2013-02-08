@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="deployment-type-development">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Barebones Friendlycode Editor</title>
+    <link rel="stylesheet" href="css/friendlycode.css">
+  </head>
+  <body style="margin: 0">
+    <div id="bare-fc-holder" class="friendlycode-loading"></div>
+
+    <script src="js/require-config.js"></script>
+    <script src="js/require.min.js"></script>
+    <script>
+      var towtruck = "http://mozilla.github.com/towtruck-clients/test1/towtruck.js"
+      var script = document.createElement("script");
+      script.src = towtruck;
+      document.head.appendChild(script);
+    </script>
+    <script>
+    require.baseUrl = "js";
+    var TowTruckCallback = null;
+    window._TowTruckCallToStart = function (callback) {
+      if (TowTruckCallback) {
+        callback();
+      } else {
+        TowTruckCallback = callback;
+      }
+    };
+    require(["jquery", "friendlycode"], function($, FriendlycodeEditor) {
+      var result = FriendlycodeEditor({
+        publishURL: "https://webpagemaker-dev.allizom.org",
+        container: $("#bare-fc-holder")
+      });
+      result.ready.then(function () {
+        var el = $(".publish-button");
+        var newButton = $('<div class="wm-button wm-button-blue short" title="Call The TowTruck">T</div>');
+        newButton.click(TowTruck);
+        el.before(newButton);
+        if (TowTruckCallback) {
+          TowTruckCallback();
+        }
+        TowTruckCallback = true;
+      });
+      return result;
+    });
+    </script>
+  </body>
+</html>
