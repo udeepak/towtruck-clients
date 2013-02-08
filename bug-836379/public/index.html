@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <script>
-      var towtruck = "http://mozilla.github.com/towtruck-clients/bug-836379/towtruck.js"
+      var towtruck = location.protocol + "//" + location.hostname + ":8080/towtruck.js";
       var script = document.createElement("script");
       script.src = towtruck;
       document.head.appendChild(script);
@@ -13,7 +13,7 @@
   </head>
   <body>
     <h1>Examples Server</h1>
-    <p>This is a copy of the TowTruck client made at 2013-02-08 15:21:07 by ianb@colorstudy.com.  It is a checkout of <a href="https://github.com/mozilla/towtruck/commit/ae1e133">ae1e133-dirty</a>.</p>
+    <!-- STATIC_HEADER -->
     <dl>
       <dt><a href="./friendlycode/">Friendly Code</a></dt>
       <dd>An example of towtruck embedded in FriendlyCode (which in turn is the basis of Thimble).</dd>

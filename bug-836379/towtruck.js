@@ -103,7 +103,7 @@
 
   // This should contain the output of "git describe --always --dirty"
   // FIXME: substitute this on the server (and update make-static-client)
-  TowTruck.version = "ae1e133";
+  TowTruck.version = "ae1e133-dirty";
   if (! TowTruck.hubBase) {
     TowTruck.hubBase = "https://towtruck.mozillalabs.com/";
   }
