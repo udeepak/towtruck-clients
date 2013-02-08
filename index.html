@@ -13,11 +13,11 @@
           var $l = $("#list");
           data.forEach(function (item) {
             var $li = $("<li>");
-            $li.append($("<a>").attr("href", data.dir).text(data.dir + "/"))
+            $li.append($("<a>").attr("href", item.dir).text(item.dir + "/"))
               .append($("<span> published at: </span>"))
-              .append($("<span>").text(data.date))
+              .append($("<span>").text(item.date))
               .append($("<span> commit: </span>"))
-              .append($("<a>").attr("href", data.commitUrl).text(data.revision));
+              .append($("<a>").attr("href", item.commitUrl).text(item.revision));
             $l.append($li);
           });
         });
