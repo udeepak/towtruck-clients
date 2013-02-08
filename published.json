@@ -1,7 +1,14 @@
 [
   {
+    "email": "ianb@colorstudy.com", 
     "commitUrl": "https://github.com/mozilla/towtruck/commit/f872e12", 
-    "revision": "f872e12", 
+    "baseUrl": "http://mozilla.github.com/towtruck-clients/test1", 
+    "dir": "test1", 
+    "revision": "f872e12"
+  }, 
+  {
+    "commitUrl": "https://github.com/mozilla/towtruck/commit/f872e12", 
+    "revision": "f872e12-dirty", 
     "baseUrl": "http://mozilla.github.com/towtruck-clients/test1", 
     "dir": "test1", 
     "email": "ianb@colorstudy.com"
